@@ -3,6 +3,10 @@
 ### netboot.xyz-custom menu example
 ###
 
+### Debian
+set debian_mirror http://deb.debian.org
+set debian_base_dir debian
+
 :custom
 clear custom_choice
 
