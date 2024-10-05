@@ -53,8 +53,8 @@ goto deb_boot
 
 :deb_boot
 imgfree
-###kernel ${debian_mirror}/${dir}/linux ${install_params} ${netcfg} ${mirrorcfg} initrd=initrd.magic ${cmdline}
-kernel ${debian_mirror}/linux ${install_params} ${netcfg} ${mirrorcfg} initrd=initrd.magic ${cmdline}
+####kernel ${debian_mirror}/${dir}/linux ${install_params} ${netcfg} ${mirrorcfg} initrd=initrd.magic ${cmdline}
+kernel ${debian_mirror}/${dir}/linux ${install_params} ${mirrorcfg} initrd=initrd.magic ${cmdline}
 initrd ${debian_mirror}/${dir}/initrd.gz
 echo
 echo MD5sums:
