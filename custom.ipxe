@@ -48,7 +48,7 @@ set install_params auto=true priority=critical preseed/url=${preseedurl}
 goto deb_text
 
 :deb_text
-set dir ${dir}${menu}-installer/${os_arch}
+###set dir ${dir}${menu}-installer/${os_arch}
 goto deb_boot
 
 :deb_boot
