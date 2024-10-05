@@ -6,7 +6,6 @@
 :custom
 clear custom_choice
 
-:debian
 set os Debian
 set os_arch ${arch}
 iseq ${os_arch} x86_64 && set os_arch amd64 ||
