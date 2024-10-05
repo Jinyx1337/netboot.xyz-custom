@@ -37,7 +37,7 @@ item --gap Install types
 item text ${space} Text Based Install
 item preseed ${space} Preseed
 
-choose --default ${type} type || goto debian
+###choose --default ${type} type || goto debian
 
 echo ${cls}
 goto deb_${type}
