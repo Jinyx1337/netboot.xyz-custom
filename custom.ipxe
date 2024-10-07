@@ -27,7 +27,7 @@ goto mirrorcfg
 :mirrorcfg
 set debian_mirror ${debian_mirror}
 set mirrorcfg mirror/suite=${debian_version}
-set dir ${debian_base_dir}/dists/${debian_version}/main/installer-${os_arch}/current/images/netboot/
+set dir ${debian_base_dir}/dists/${debian_version}/main/installer-${os_arch}/current/images/netboot/debian-installer/${os_arch}
 goto deb_boot_type
 
 :deb_boot_type
@@ -46,7 +46,7 @@ goto deb_${type}
 set preseedurl http://192.168.10.230:8080/debianseed
 set install_params auto=true priority=critical preseed/url=${preseedurl}
 #set dir ${dir}${menu}-installer/${os_arch}
-set dir ${dir}debian-installer/${os_arch}
+#set dir ${dir}debian-installer/${os_arch}
 goto deb_boot
 
 :deb_boot
