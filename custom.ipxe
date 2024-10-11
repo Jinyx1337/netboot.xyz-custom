@@ -25,6 +25,7 @@ set install_params auto=true priority=critical preseed/url=${preseedurl}
 
 
 :deb12_pre
+imgfree
 kernel http://deb.debian.org/debian/dists/bookworm/main/installer-amd64/current/images/netboot/debian-installer/amd64/linux ${install_params} initrd=initrd.magic
 initrd http://deb.debian.org/debian/dists/bookworm/main/installer-amd64/current/images/netboot/debian-installer/amd64/initrd.gz
 echo
