@@ -1,0 +1,44 @@
+#!ipxe
+###
+### netboot.xyz-custom menu example
+###
+
+:custom
+clear custom_choice
+menu Jinyx1337 Test Menu
+item --gap Preseed installers
+item deb12_pre ${space} Debian 12
+item deb11_pre ${space} Debian 11 
+
+item --gap Live ISOs
+item grml_iso ${space} Grml-Live
+choose custom_choice || goto custom_exit
+echo ${cls}
+goto ${custom_choice}
+goto custom_exit
+
+
+:deb_preseed
+set preseedurl http://192.168.10.230:8080/debianseed
+set install_params auto=true priority=critical preseed/url=${preseedurl}
+
+
+
+:deb12_pre
+kernel http://deb.debian.org/debian/dists/bookworm/main/installer-amd64/current/images/netboot/debian-installer/amd64/linux ${install_params}
+initrd http://deb.debian.org/debian/dists/bookworm/main/installer-amd64/current/images/netboot/debian-installer/amd64/initrd.gz
+boot || goto custom_exit
+
+:deb11_pre
+kernel https://boot.netboot.xyz/memdisk raw iso
+initrd http://path.to/iso
+boot || goto custom_exit
+
+:grml_iso
+
+#echo Chains into another menu...
+#chain https://raw.githubusercontent.com/${github_user}/netboot.xyz-custom/master/custom1.ipxe || goto custom
+
+:custom_exit
+chain utils.ipxe
+exit
